@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  // font-family: 'Barlow Condensed', sans-serif;
+  font-family: sans-serif;
+}
+html {
+  font-size: 62.5%; /* PARA USAR -> 1rem = 10px */
+}
+/* ///////////////////// */
+main {
+  display: flex;
+  background-color: #2b2a30;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-temporizador {
+  width: 310px;
+  height: 310px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: gray;
+  background: conic-gradient(from 180deg, var(--color-1) 100%, black 100%);
+  box-shadow: -10px 10px 20px 10px rgba(22, 22, 25, 0.9),
+    0 0 20px 20px rgba(72, 70, 76, 0.7);
+
+  .temporizador {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(#3e3e46, #141416);
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 4rem;
+    position: relative;
+
+    &__tiempo {
+      color: white;
+      font-size: 10rem;
+      font-size: 9rem;
+      font-weight: 300;
+      text-shadow: 0 0 20px #18181a;
+      // opacity: 0;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    &__boton {
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: 500;
+      padding: 0.5rem 2rem;
+      border-radius: 2rem;
+
+      &:hover {
+        // background-color: rgb(27, 27, 27);
+        background-color: var(--color-1);
+      }
+    }
+    &__settings {
+      width: 25px;
+      height: 25px;
+      background-image: url(../FILES/STARTER/images/gear.svg);
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border: none;
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    .input-numeros {
+      background-color: transparent;
+      color: white;
+      width: 240px;
+      height: 90px;
+      position: absolute;
+
+      font-size: 10rem;
+      font-size: 9rem;
+      font-weight: 300;
+
+      border: none;
+      outline: none;
+      text-align: center;
+      top: 83px;
+      border-bottom: 6px solid var(--color-2);
+
+      display: none;
+    }
+
+    #boton-start {
+      display: none;
+      background-color: var(--color-1);
+
+      &:hover {
+        background-color: var(--color-2);
+      }
+    }
+    #boton-stop {
+      display: none;
+      background-color: var(--color-1);
+    }
+  }
+}
+
+/* ///////////////// */
+.editable,
+.visible {
+  display: inherit !important;
+}
+.oculto {
+  opacity: 0 !important;
+}
+.tema-verde {
+  --color-1: #00aa51;
+  --color-2: #058141;
+}
+.tema-rojo {
+  --color-1: crimson;
+  --color-2: rgb(185, 18, 51);
+}
