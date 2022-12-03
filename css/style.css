@@ -74,7 +74,7 @@ main {
 .contenedor-temporizador .temporizador__settings {
   width: 25px;
   height: 25px;
-  background-image: url(../FILES/STARTER/images/gear.svg);
+  background-image: url(../assets/gear.svg);
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
