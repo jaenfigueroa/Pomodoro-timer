@@ -85,6 +85,9 @@ main {
 .contenedor-temporizador .temporizador__settings:hover {
   opacity: 0.6;
 }
+.contenedor-temporizador .temporizador__settings:disabled {
+  opacity: 0;
+}
 .contenedor-temporizador .temporizador .input-numeros {
   background-color: transparent;
   color: white;
@@ -134,7 +137,7 @@ main {
 }
 
 .girar {
-  animation: girar 0.2s;
+  animation: girar 0.15s;
   animation-iteration-count: 3;
 }
 

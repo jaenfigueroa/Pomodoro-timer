@@ -24,7 +24,7 @@ function controlarPantalla() {
   segundos--
 
   actualizarPantalla(minutos, segundos)
-  controlarBarra(minutos, segundos, porcentajeFaltante)
+  controlarBarra(minutos, segundos)
 }
 
 function controlarBarra(minutos, segundos) {
@@ -66,15 +66,21 @@ function cambiarTema(color) {
 let intervalo
 
 function start() {
+
   //obtener los valores del input y actualizar valores del js
   obtenerYActualizarDatos()
-
 
   //si el temporiador tiene un valor mayor de 0 segundos
   if ((minutos * 60) + segundos > 0) {
 
+    //copiar el valor del input a la pantalla
+    igualarValores(false)
+
+    //ocultar el boton de configuracion
+    botonSettings.disabled = 1
+
     //generar un nuevo total inicial
-    // totalInicial = (minutos * 60) + segundos
+    totalInicial = (minutos * 60) + segundos
 
     //cambiar a tema rojo
     cambiarTema('rojo')
@@ -101,6 +107,11 @@ function start() {
 }
 
 function stop() {
+  igualarValores(true)
+
+  //mostrar el boton de configuracion
+  botonSettings.disabled = 0
+
   //cambiar a tema verde
   cambiarTema('verde')
   //copiar el contenido de pantalla al input editable
@@ -112,13 +123,40 @@ function stop() {
   clearInterval(intervalo)
 }
 
-function abrirConfiguracion() { //FALTA MEJORAR ------>
-  //copiar el valor de pantalla al input
-  inputNumeros.value = pantalla.textContent
-  //copiar el valor del input a pantalla
-  pantalla.textContent = inputNumeros.value
+//////////////////////////////////
+let direccion = true //true significa PANTALLA A INPUT (INPUT OCULTO)
+
+function abrirConfiguracion() {
+  //ocultar el boton de settings
+  botonSettings.disabled = 1
+
+  //copiar el valor de la pantalla al input
+  igualarValores(true)
 
   //alternar entre -> la pantalla y el input
   pantalla.classList.toggle('oculto')
   inputNumeros.classList.toggle('visible')
+}
+
+function igualarValores(direccion) {
+  console.log('-------------------------------');
+  console.log('pantalla antes', pantalla.textContent);
+  console.log('inputNumeros antes', inputNumeros.value);
+
+  if (direccion) {
+    //copiar el valor de pantalla al input
+    inputNumeros.value = pantalla.textContent
+
+    console.log('se ejecuto:', direccion);
+    direccion = true
+  } else {
+    //copiar el valor del input a pantalla
+    pantalla.textContent = inputNumeros.value
+
+    console.log('se ejecuto:', direccion);
+    direccion = false
+  }
+
+  console.log('pantalla despues', pantalla.textContent);
+  console.log('inputNumeros despues', inputNumeros.value);
 }

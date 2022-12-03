@@ -89,6 +89,10 @@ main {
       &:hover {
         opacity: 0.6;
       }
+
+      &:disabled {
+        opacity: 0;
+      }
     }
 
     .input-numeros {
@@ -145,7 +149,7 @@ main {
 }
 
 .girar {
-  animation: girar 0.2s;
+  animation: girar 0.15s;
   animation-iteration-count: 3;
 }
 
