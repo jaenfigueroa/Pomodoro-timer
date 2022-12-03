@@ -1,115 +1,124 @@
 const contenedorTemporizador = document.getElementById('contenedor-temporizador')
 
-const tiempo = document.getElementById('tiempo')
+const pantalla = document.getElementById('pantalla')
 const botonStart = document.getElementById('boton-start')
 const botonStop = document.getElementById('boton-stop')
 const botonSettings = document.getElementById('boton-settings')
 
 const inputNumeros = document.getElementById('input-numeros')
 ///////////////////////////////////
-const seg = 60
-
 let minutos = 00
-let segundos = 10
+let segundos = 00
 
-let totalInicial = (minutos * seg) + segundos
+let totalInicial
 let totalActual
 
-let pocentajeFaltante = 0
+let porcentajeFaltante = 0
 ///////////////////////////////////
-function disminuir() {
+function controlarPantalla() {
 
-  ///////////////////////////
   if (segundos == 0) {
     minutos--
     segundos = 60
   }
   segundos--
 
-  //controlar los numeros
-  let numeros = `${("0" + minutos).slice(-2)}:${("0" + segundos).slice(-2)}`
-  tiempo.textContent = numeros
-
-  cambiarTamanoBorde(minutos, segundos, pocentajeFaltante)
+  actualizarPantalla(minutos, segundos)
+  controlarBarra(minutos, segundos, porcentajeFaltante)
 }
 
-//controlar tamaño borde rojo/////////////////
-function cambiarTamanoBorde(minutos, segundos, porcentaje) {
-  //controlar el borde rojo
+function controlarBarra(minutos, segundos) {
   totalActual = (minutos * 60) + segundos
-  pocentajeFaltante = (totalActual / totalInicial) * 100
+  porcentajeFaltante = (totalActual / totalInicial) * 100
 
   if (minutos <= 0 && segundos <= 0) {
     stop()
-    cambiarBarra(100)
+    actualizarBarra(100)
   } else {
-    cambiarBarra(pocentajeFaltante)
+    actualizarBarra(porcentajeFaltante)
   }
 }
 
-function cambiarBarra(numero) {
-  contenedorTemporizador.style.background = `
-  conic-gradient(from 180deg, 
-  var(--color-1) ${numero}%, black ${numero}%)
-  `
-}
-///modificar valores////////////////////
-function actualizarDatos() {
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+function obtenerYActualizarDatos() {
   let string = inputNumeros.value
-  let primerNumero = Number(string.slice(0, 2)) || minutos
-  let segundoNumero = Number(string.slice(3, 5)) || segundos
+  let primerValor = Number(string.slice(0, 2)) || minutos
+  let segundoValor = Number(string.slice(3, 5)) || segundos
 
-  minutos = primerNumero
-  segundos = segundoNumero
-
-
-  return {
-    minutos, segundos
-  }
+  minutos = primerValor
+  segundos = segundoValor
 }
 
-function cambiarNumeros(x, y) {
-  tiempo.textContent = `${("0" + x).slice(-2)}:${("0" + y).slice(-2)}`
+function actualizarPantalla(x, y) {
+  pantalla.textContent = `${("0" + x).slice(-2)}:${("0" + y).slice(-2)}`
 }
-/////////////////////////////////////
+
+function actualizarBarra(numero) {
+  contenedorTemporizador.style.background = `conic-gradient(from 180deg, var(--color-1) ${numero}%, black ${numero}%)`
+}
+
+function cambiarTema(color) {
+  contenedorTemporizador.className = `contenedor-temporizador tema-${color}`
+}
+/////////////////////////////////////////////
+/////////////////////////////////////////////
 let intervalo
 
-
 function start() {
-
-  cambiarBarra(100)
-  let { minutos, segundos } = actualizarDatos()
-  cambiarNumeros(minutos, segundos)
+  //obtener los valores del input y actualizar valores del js
+  obtenerYActualizarDatos()
 
 
-  contenedorTemporizador.className = 'contenedor-temporizador tema-rojo'
+  //si el temporiador tiene un valor mayor de 0 segundos
+  if ((minutos * 60) + segundos > 0) {
 
-  botonStop.classList.add('visible')
-  botonStart.classList.remove('visible')
+    //generar un nuevo total inicial
+    // totalInicial = (minutos * 60) + segundos
 
-  inputNumeros.classList.remove('editable')
-  tiempo.classList.remove('oculto')
+    //cambiar a tema rojo
+    cambiarTema('rojo')
+    //actualizar la pantalla
+    actualizarPantalla(minutos, segundos)
 
+    //ocultar el input y mostrar la pantalla
+    inputNumeros.classList.remove('visible')
+    pantalla.classList.remove('oculto')
 
+    //ocultar el boton start y mostrar el boton stop
+    botonStart.classList.remove('visible')
+    botonStop.classList.add('visible')
 
-  intervalo = setInterval(disminuir, 1000);
+    //disminuir los segundos y minutos, cada segundo que pase
+    intervalo = setInterval(controlarPantalla, 1000);
+  } else {
+    pantalla.classList.add('girar')
+
+    setTimeout(() => {
+      pantalla.classList.remove('girar')
+    }, 1000);
+  }
 }
 
 function stop() {
-  contenedorTemporizador.className = 'contenedor-temporizador tema-verde'
-
+  //cambiar a tema verde
+  cambiarTema('verde')
+  //copiar el contenido de pantalla al input editable
+  inputNumeros.textContent = pantalla.textContent
+  //ocultar el boton stop y mostrar el boton start
   botonStop.classList.remove('visible')
   botonStart.classList.add('visible')
-
-  inputNumeros.textContent = `${("0" + minutos).slice(-2)}:${("0" + segundos).slice(-2)}`
-
+  //parar el proceso de disminuir el contador
   clearInterval(intervalo)
 }
 
+function abrirConfiguracion() { //FALTA MEJORAR ------>
+  //copiar el valor de pantalla al input
+  inputNumeros.value = pantalla.textContent
+  //copiar el valor del input a pantalla
+  pantalla.textContent = inputNumeros.value
 
-botonSettings.addEventListener('click', () => {
-  inputNumeros.classList.toggle('editable')
-  tiempo.classList.toggle('oculto')
-
-  inputNumeros.value = tiempo.textContent
-})
+  //alternar entre -> la pantalla y el input
+  pantalla.classList.toggle('oculto')
+  inputNumeros.classList.toggle('visible')
+}

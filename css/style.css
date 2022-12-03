@@ -113,16 +113,7 @@ main {
   background-color: var(--color-1);
 }
 
-/* ///////////////// */
-.editable,
-.visible {
-  display: inherit !important;
-}
-
-.oculto {
-  opacity: 0 !important;
-}
-
+/*TEMAS ///////////////// */
 .tema-verde {
   --color-1: #00aa51;
   --color-2: #058141;
@@ -131,6 +122,29 @@ main {
 .tema-rojo {
   --color-1: crimson;
   --color-2: rgb(185, 18, 51);
+}
+
+/* ///////////////// */
+.visible {
+  display: inherit !important;
+}
+
+.oculto {
+  opacity: 0 !important;
+}
+
+.girar {
+  animation: girar 0.2s;
+  animation-iteration-count: 3;
+}
+
+@keyframes girar {
+  from {
+    transform: rotateZ(15deg);
+  }
+  to {
+    transform: rotateZ(-15deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
