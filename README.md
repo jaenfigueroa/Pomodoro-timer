@@ -13,5 +13,11 @@ In this project, we're creating a Pomodoro timer.
  - Once the timer finishes, the ring should change from green to red and an alert message is passed to the browser.
  
 ## 🚀 challenge finished
+
+This challenge was made with:
+- HTML
+- SASS
+- JavaScript
+
 You can try my final result of the challenge [here](https://jaenfigueroa.github.io/reto-temporizador/)
 
