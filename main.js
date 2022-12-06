@@ -32,6 +32,9 @@ function controlarBarra(minutos, segundos) {
   porcentajeFaltante = (totalActual / totalInicial) * 100
 
   if (minutos <= 0 && segundos <= 0) {
+    /* parar el audio */
+    audio.pause()
+
     stop()
     actualizarBarra(100)
     iconoCheck.style.display = 'inherit'
@@ -73,6 +76,10 @@ function obtenerYActualizarDatos() {
 }
 
 function actualizarPantalla(x, y) {
+  /* empezar audio */
+  audio.pause()
+  audio.play()
+
   inputNumeros.value = `${('0' + x).slice(-2)}:${('0' + y).slice(-2)}`
 }
 
@@ -154,4 +161,11 @@ function abrirConfiguracion() {
   inputNumeros.disabled = 0
   //ocultar el boton de settings
   botonSettings.disabled = 1
+}
+
+///////////////////////////////////////////////////////////////////////////////
+const audio = document.getElementById('audio')
+
+function play() {
+  audio.play()
 }

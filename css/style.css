@@ -203,4 +203,8 @@ footer a:hover {
   opacity: 0;
 }
 
+#audio {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
