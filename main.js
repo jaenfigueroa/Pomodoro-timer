@@ -41,9 +41,7 @@ function controlarBarra(minutos, segundos) {
   }
 }
 
-//////////////////////////////////////////
-//////////////////////////////////////////
-//////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 function obtenerYActualizarDatos() {
   // -si el largo es 5
   // - si tiene dos puntos
@@ -67,12 +65,7 @@ function obtenerYActualizarDatos() {
 
     return true
   } else {
-    console.log('no pasa test')
-
     moverInput()
-
-    console.log(primerValor)
-    console.log(segundoValor)
 
     aviso.style.display = 'flex'
     return false
@@ -91,11 +84,9 @@ function cambiarTema(color) {
   contenedorTemporizador.className = `contenedor-temporizador tema-${color}`
 }
 
-/////////////////////////////////////////////
-/////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 let intervalo
-//////////////////////////////////////////
-//////////////////////////////////////////
+
 function start() {
   //ocultar el icono de check, mostrar el input desativado, ocultar el aviso
   iconoCheck.style.display = 'none'
@@ -104,8 +95,6 @@ function start() {
 
   //obtener los valores del input, actualizar y verificar los valores del js
   let verificacion = obtenerYActualizarDatos()
-
-  console.log('respuesta:', verificacion)
 
   //si el temporiador tiene un valor mayor de 0 segundos
   if (verificacion && minutos * 60 + segundos > 0) {
@@ -140,8 +129,8 @@ function moverInput() {
     inputNumeros.classList.remove('girar')
   }, 400)
 }
-/////////////////////////////////////////////
-/////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
 function stop() {
   //mostrar el boton de configuracion
   botonSettings.disabled = 0
@@ -155,8 +144,8 @@ function stop() {
   //parar el proceso de disminuir el contador
   clearInterval(intervalo)
 }
-//////////////////////////////////////////
-//////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
 function abrirConfiguracion() {
   //ocultar el icono de check
   iconoCheck.style.display = 'none'
