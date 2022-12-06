@@ -41,8 +41,9 @@ function controlarBarra(minutos, segundos) {
     audio.stop()
   } else {
     /* empezar audio */
-    actualizarBarra(porcentajeFaltante)
     audio.play()
+
+    actualizarBarra(porcentajeFaltante)
   }
 }
 
