@@ -1,7 +1,7 @@
 <div align="center">
 
-# Pomodoro timer ⏱️
-**Challenge #1**
+# Challenge #1 - Pomodoro timer ⏱️
+[Advent of CSS 2021](https://www.adventofcss.co)
 </div>
 
 <div align="center" >
