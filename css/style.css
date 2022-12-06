@@ -43,14 +43,24 @@ main {
   padding-top: 4rem;
   position: relative;
 }
-.contenedor-temporizador .temporizador__tiempo {
+.contenedor-temporizador .temporizador .input-numeros {
+  background-color: transparent;
   color: white;
+  width: 240px;
+  height: 90px;
   font-size: 10rem;
   font-size: 9rem;
   font-weight: 300;
-  text-shadow: 0 0 20px #18181a;
+  border: none;
+  outline: none;
+  text-align: center;
+  top: 83px;
+  border-bottom: 6px solid var(--color-2);
 }
-.contenedor-temporizador .temporizador div {
+.contenedor-temporizador .temporizador .input-numeros:disabled {
+  border-bottom: 6px solid transparent;
+}
+.contenedor-temporizador .temporizador .contenedor-botones {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,8 +78,19 @@ main {
   padding: 0.5rem 2rem;
   border-radius: 2rem;
 }
-.contenedor-temporizador .temporizador__boton:hover {
+.contenedor-temporizador .temporizador #boton-start {
+  display: none;
   background-color: var(--color-1);
+}
+.contenedor-temporizador .temporizador #boton-start:hover {
+  background-color: var(--color-2);
+}
+.contenedor-temporizador .temporizador #boton-stop {
+  display: none;
+  background-color: var(--color-1);
+}
+.contenedor-temporizador .temporizador #boton-stop:hover {
+  background-color: var(--color-2);
 }
 .contenedor-temporizador .temporizador__settings {
   width: 25px;
@@ -87,33 +108,6 @@ main {
 }
 .contenedor-temporizador .temporizador__settings:disabled {
   opacity: 0;
-}
-.contenedor-temporizador .temporizador .input-numeros {
-  background-color: transparent;
-  color: white;
-  width: 240px;
-  height: 90px;
-  position: absolute;
-  font-size: 10rem;
-  font-size: 9rem;
-  font-weight: 300;
-  border: none;
-  outline: none;
-  text-align: center;
-  top: 83px;
-  border-bottom: 6px solid var(--color-2);
-  display: none;
-}
-.contenedor-temporizador .temporizador #boton-start {
-  display: none;
-  background-color: var(--color-1);
-}
-.contenedor-temporizador .temporizador #boton-start:hover {
-  background-color: var(--color-2);
-}
-.contenedor-temporizador .temporizador #boton-stop {
-  display: none;
-  background-color: var(--color-1);
 }
 
 /*TEMAS ///////////////// */
@@ -155,12 +149,13 @@ main {
   filter: drop-shadow(5px 5px 5px rgba(35, 35, 39, 0.5));
   width: 150px;
   height: 150px;
-  top: 55px;
+  top: 40px;
   left: 83px;
+  display: none;
 }
 
 .oculto {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,15 +1,11 @@
-const contenedorTemporizador = document.getElementById(
-  'contenedor-temporizador'
-)
+const contenedorTemporizador = document.getElementById('contenedor-temporizador')
 
-const pantalla = document.getElementById('pantalla')
+const iconoCheck = document.getElementById('icono-check')
+const inputNumeros = document.getElementById('input-numeros')
+
 const botonStart = document.getElementById('boton-start')
 const botonStop = document.getElementById('boton-stop')
 const botonSettings = document.getElementById('boton-settings')
-
-const inputNumeros = document.getElementById('input-numeros')
-
-const iconoCheck = document.getElementById('icono-check')
 ///////////////////////////////////
 let minutos = 00
 let segundos = 00
@@ -37,15 +33,16 @@ function controlarBarra(minutos, segundos) {
   if (minutos <= 0 && segundos <= 0) {
     stop()
     actualizarBarra(100)
-    iconoCheck.classList.remove('oculto')
-    pantalla.classList.add('oculto')
+    iconoCheck.style.display = 'inherit'
+    inputNumeros.classList.add('oculto')
   } else {
     actualizarBarra(porcentajeFaltante)
   }
 }
 
-/////////////////////////////////////////////
-/////////////////////////////////////////////
+//////////////////////////////////////////
+//////////////////////////////////////////
+//////////////////////////////////////////
 function obtenerYActualizarDatos() {
   let string = inputNumeros.value
   let primerValor = Number(string.slice(0, 2)) || minutos
@@ -53,10 +50,13 @@ function obtenerYActualizarDatos() {
 
   minutos = primerValor
   segundos = segundoValor
+
+  console.log(primerValor)
+  console.log(segundoValor)
 }
 
 function actualizarPantalla(x, y) {
-  pantalla.textContent = `${('0' + x).slice(-2)}:${('0' + y).slice(-2)}`
+  inputNumeros.value = `${('0' + x).slice(-2)}:${('0' + y).slice(-2)}`
 }
 
 function actualizarBarra(numero) {
@@ -66,24 +66,29 @@ function actualizarBarra(numero) {
 function cambiarTema(color) {
   contenedorTemporizador.className = `contenedor-temporizador tema-${color}`
 }
+
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 let intervalo
-
+//////////////////////////////////////////
+//////////////////////////////////////////
 function start() {
-  //ocultar el icono de check y mostrar la pantalla
-  iconoCheck.classList.add('oculto')
-  pantalla.classList.remove('oculto')
+  console.log('se hizo click en start')
 
   //obtener los valores del input y actualizar valores del js
   obtenerYActualizarDatos()
 
+  //ocultar el icono de check y mostrar el input desativado
+  iconoCheck.style.display = 'none'
+  inputNumeros.classList.remove('oculto')
+
   //si el temporiador tiene un valor mayor de 0 segundos
   if (minutos * 60 + segundos > 0) {
-    //copiar el valor del input a la pantalla
-    igualarValores(false)
+    console.log('el valor es mayor de 0 segundos')
 
-    //ocultar el boton de configuracion
+    //desabilitar la edicion
+    inputNumeros.disabled = 1
+    //ocultar el boton de settings
     botonSettings.disabled = 1
 
     //generar un nuevo total inicial
@@ -94,79 +99,47 @@ function start() {
     //actualizar la pantalla
     actualizarPantalla(minutos, segundos)
 
-    //ocultar el input, mostrar la pantalla, y ocultar el check
-    inputNumeros.classList.remove('visible')
-    pantalla.classList.remove('oculto')
-
     //ocultar el boton start y mostrar el boton stop
     botonStart.classList.remove('visible')
     botonStop.classList.add('visible')
 
-    //disminuir los segundos y minutos, cada segundo que pase
+    // //disminuir los segundos y minutos, cada segundo que pase
     intervalo = setInterval(controlarPantalla, 1000)
   } else {
-    pantalla.classList.add('girar')
+    console.log('el valor es menor de 0 segundos')
+
     inputNumeros.classList.add('girar')
 
     setTimeout(() => {
-      pantalla.classList.remove('girar')
       inputNumeros.classList.remove('girar')
-    }, 1000)
+    }, 400)
   }
 }
 
+/////////////////////////////////////////////
+/////////////////////////////////////////////
 function stop() {
-  igualarValores(true)
-
+  console.log('se hizo stop')
   //mostrar el boton de configuracion
   botonSettings.disabled = 0
 
   //cambiar a tema verde
   cambiarTema('verde')
-  //copiar el contenido de pantalla al input editable
-  inputNumeros.textContent = pantalla.textContent
+
   //ocultar el boton stop y mostrar el boton start
   botonStop.classList.remove('visible')
   botonStart.classList.add('visible')
   //parar el proceso de disminuir el contador
   clearInterval(intervalo)
 }
-
-//////////////////////////////////
-let direccion = true //true significa PANTALLA A INPUT (INPUT OCULTO)
-
+//////////////////////////////////////////
+//////////////////////////////////////////
 function abrirConfiguracion() {
+  //ocultar el icono de check
+  iconoCheck.style.display = 'none'
+  //mostrar y habilitar edicion de los numeros
+  inputNumeros.classList.remove('oculto')
+  inputNumeros.disabled = 0
   //ocultar el boton de settings
   botonSettings.disabled = 1
-
-  //copiar el valor de la pantalla al input
-  igualarValores(true)
-
-  //ocultar la pantalla y el check, mostrar el input
-  pantalla.classList.add('oculto')
-  iconoCheck.classList.add('oculto')
-  inputNumeros.classList.add('visible')
-}
-
-function igualarValores(direccion) {
-  console.log('-------------------------------')
-  console.log('pantalla antes', pantalla.textContent)
-  console.log('inputNumeros antes', inputNumeros.value)
-
-  if (direccion) {
-    //copiar el valor de pantalla al input
-    inputNumeros.value = pantalla.textContent
-
-    console.log('se ejecuto:', direccion)
-    direccion = true
-  } else {
-    //copiar el valor del input a pantalla
-    pantalla.textContent = inputNumeros.value
-
-    console.log('se ejecuto:', direccion)
-    direccion = false
-  }
-
-  console.log('pantalla despues', pantalla.textContent)
-  console.log('inputNumeros despues', inputNumeros.value)
 }

@@ -22,14 +22,15 @@
     <main>
       <article class="contenedor-temporizador tema-verde" id="contenedor-temporizador">
         <div class="temporizador">
-          <p class="temporizador__tiempo" id="pantalla">00:00</p>
+          <input type="text" class="input-numeros" id="input-numeros" minlength="5" maxlength="5" value="00:00" disabled ></input>
           <div class="contenedor-botones">
-            <button class="temporizador__boton visible" id="boton-start" onclick="start()">Start</button>
+            <button class="temporizador__boton visible" id="boton-start" onclick="start()">
+              Start
+            </button>
             <button class="temporizador__boton" id="boton-stop" onclick="stop()">Stop</button>
             <button class="temporizador__settings" id="boton-settings" onclick="abrirConfiguracion()"></button>
           </div>
-          <div class="check oculto" id="icono-check"></div>
-          <input type="text" class="input-numeros" id="input-numeros" minlength="5" maxlength="5" ></input>
+          <div class="check" id="icono-check"></div>
         </div>
       </article>
     </main>

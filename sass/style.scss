@@ -42,15 +42,28 @@ main {
     padding-top: 4rem;
     position: relative;
 
-    &__tiempo {
+    .input-numeros {
+      background-color: transparent;
       color: white;
+      width: 240px;
+      height: 90px;
+
       font-size: 10rem;
       font-size: 9rem;
       font-weight: 300;
-      text-shadow: 0 0 20px #18181a;
-      // opacity: 0;
+
+      border: none;
+      outline: none;
+      text-align: center;
+      top: 83px;
+      border-bottom: 6px solid var(--color-2);
+
+      &:disabled {
+        border-bottom: 6px solid transparent;
+      }
     }
-    div {
+
+    .contenedor-botones {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -68,12 +81,25 @@ main {
       font-weight: 500;
       padding: 0.5rem 2rem;
       border-radius: 2rem;
+    }
+
+    #boton-start {
+      display: none;
+      background-color: var(--color-1);
 
       &:hover {
-        // background-color: rgb(27, 27, 27);
-        background-color: var(--color-1);
+        background-color: var(--color-2);
       }
     }
+    #boton-stop {
+      display: none;
+      background-color: var(--color-1);
+
+      &:hover {
+        background-color: var(--color-2);
+      }
+    }
+
     &__settings {
       width: 25px;
       height: 25px;
@@ -92,39 +118,6 @@ main {
       &:disabled {
         opacity: 0;
       }
-    }
-
-    .input-numeros {
-      background-color: transparent;
-      color: white;
-      width: 240px;
-      height: 90px;
-      position: absolute;
-
-      font-size: 10rem;
-      font-size: 9rem;
-      font-weight: 300;
-
-      border: none;
-      outline: none;
-      text-align: center;
-      top: 83px;
-      border-bottom: 6px solid var(--color-2);
-
-      display: none;
-    }
-
-    #boton-start {
-      display: none;
-      background-color: var(--color-1);
-
-      &:hover {
-        background-color: var(--color-2);
-      }
-    }
-    #boton-stop {
-      display: none;
-      background-color: var(--color-1);
     }
   }
 }
@@ -159,9 +152,6 @@ main {
 }
 
 /* //////////////////////// */
-// #pantalla {
-//   opacity: 0;
-// }
 .check {
   position: absolute;
   background-image: url(../assets/check.svg);
@@ -171,10 +161,10 @@ main {
   filter: drop-shadow(5px 5px 5px rgba(35, 35, 39, 0.5));
   width: 150px;
   height: 150px;
-  top: 55px;
+  top: 40px;
   left: 83px;
+  display: none;
 }
-
 .oculto {
-  opacity: 0 !important;
+  opacity: 0;
 }
