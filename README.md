@@ -12,6 +12,6 @@ In this project, we're creating a Pomodoro timer.
  - Click on the gear icon to change the length (minutes and seconds) of the timer.
  - Once the timer finishes, the ring should change from green to red and an alert message is passed to the browser.
  
-## Website
+## challenge finished
+You can try my final result of the challenge [here](https://jaenfigueroa.github.io/reto-temporizador/)
 
-https://jaenfigueroa.github.io/reto-temporizador/
