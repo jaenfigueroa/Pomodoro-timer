@@ -74,10 +74,6 @@ function obtenerYActualizarDatos() {
     console.log(primerValor)
     console.log(segundoValor)
 
-    if (primerValor === 0 && segundoValor === 0) {
-      return false
-    }
-
     aviso.style.display = 'flex'
     return false
   }
