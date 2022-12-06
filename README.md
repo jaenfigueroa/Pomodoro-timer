@@ -22,9 +22,9 @@ In this project, we're creating a Pomodoro timer.
 ## 🚀 Challenge finished
 
 This challenge was developed with the following languages:
-- **HTML**
+<!-- - **HTML**
 - **Sass**
-- **JavaScript**
+- **JavaScript** -->
 
 <div align="left" >
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" width="70px" height="70px" /> 
