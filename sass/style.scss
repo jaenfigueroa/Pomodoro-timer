@@ -123,6 +123,7 @@ main {
     #boton-start {
       display: none;
       background-color: var(--color-1);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.812);
 
       &:hover {
         background-color: var(--color-2);
