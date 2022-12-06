@@ -39,8 +39,8 @@ This challenge was developed with the following languages:
  
 ## 🌍 Website
 
-<img src="https://octodex.github.com/images/welcometocat.png" style="width: 25%" align="right">
-
 You can try my final result of the challenge [here](https://jaenfigueroa.github.io/Pomodoro-timer) 😃🚀.
+
+<img src="https://octodex.github.com/images/welcometocat.png" style="width: 25%">
 
 
