@@ -14,9 +14,7 @@
 
 In this project, we're creating a Pomodoro timer.
 
-<div  align="center">
 <img src="./assets/temporizador1.gif" align="center" style="width: 70%"  />
-</div>
 
 ## 📌 Users should be able to:
 
