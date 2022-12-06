@@ -1,6 +1,7 @@
 <div align="center">
 
-# Challenge #1 - Pomodoro timer ⏱️
+# Pomodoro timer ⏱️
+## Advent of CSS 2021 - Challenge #1
 </div>
 
 <div align="center" >
