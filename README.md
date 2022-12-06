@@ -1,5 +1,12 @@
 # Challenge #1 - Pomodoro-timer ⏱️
 
+<div align="left" >
+<img src="https://img.shields.io/github/stars/jaenfigueroa/Pomodoro-timer">
+<img src="https://img.shields.io/github/forks/jaenfigueroa/Pomodoro-timer">
+<img src="https://img.shields.io/github/issues-pr/jaenfigueroa/Pomodoro-timer">
+<img src="https://img.shields.io/github/issues/jaenfigueroa/Pomodoro-timer">
+</div>
+
 ## 💡 Brief
 
 In this project, we're creating a Pomodoro timer.
@@ -12,7 +19,7 @@ In this project, we're creating a Pomodoro timer.
  - Click on the gear icon to change the length (minutes and seconds) of the timer.
  - Once the timer finishes, the ring should change from green to red and an alert message is passed to the browser.
  
-## 🚀 challenge finished
+## 🚀 Challenge finished
 
 This challenge was developed with:
 - **HTML**
