@@ -21,7 +21,7 @@ In this project, we're creating a Pomodoro timer.
  
 ## 🚀 Challenge finished
 
-This challenge was developed with:
+This challenge was developed with the following languages:
 - **HTML**
 - **Sass**
 - **JavaScript**
