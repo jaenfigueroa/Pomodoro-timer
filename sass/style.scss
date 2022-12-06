@@ -18,9 +18,9 @@ body {
 /* ///////////////////// */
 main {
   display: flex;
-  // height: 100vh;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 .contenedor-temporizador {
   width: 310px;
