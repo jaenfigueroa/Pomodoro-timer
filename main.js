@@ -8,6 +8,8 @@ const botonStop = document.getElementById('boton-stop')
 const botonSettings = document.getElementById('boton-settings')
 
 const inputNumeros = document.getElementById('input-numeros')
+
+const iconoCheck = document.getElementById('icono-check')
 ///////////////////////////////////
 let minutos = 00
 let segundos = 00
@@ -35,6 +37,8 @@ function controlarBarra(minutos, segundos) {
   if (minutos <= 0 && segundos <= 0) {
     stop()
     actualizarBarra(100)
+    iconoCheck.classList.remove('oculto')
+    pantalla.classList.add('oculto')
   } else {
     actualizarBarra(porcentajeFaltante)
   }
@@ -67,6 +71,10 @@ function cambiarTema(color) {
 let intervalo
 
 function start() {
+  //ocultar el icono de check y mostrar la pantalla
+  iconoCheck.classList.add('oculto')
+  pantalla.classList.remove('oculto')
+
   //obtener los valores del input y actualizar valores del js
   obtenerYActualizarDatos()
 
@@ -86,7 +94,7 @@ function start() {
     //actualizar la pantalla
     actualizarPantalla(minutos, segundos)
 
-    //ocultar el input y mostrar la pantalla
+    //ocultar el input, mostrar la pantalla, y ocultar el check
     inputNumeros.classList.remove('visible')
     pantalla.classList.remove('oculto')
 
@@ -98,9 +106,11 @@ function start() {
     intervalo = setInterval(controlarPantalla, 1000)
   } else {
     pantalla.classList.add('girar')
+    inputNumeros.classList.add('girar')
 
     setTimeout(() => {
       pantalla.classList.remove('girar')
+      inputNumeros.classList.remove('girar')
     }, 1000)
   }
 }
@@ -132,9 +142,10 @@ function abrirConfiguracion() {
   //copiar el valor de la pantalla al input
   igualarValores(true)
 
-  //alternar entre -> la pantalla y el input
-  pantalla.classList.toggle('oculto')
-  inputNumeros.classList.toggle('visible')
+  //ocultar la pantalla y el check, mostrar el input
+  pantalla.classList.add('oculto')
+  iconoCheck.classList.add('oculto')
+  inputNumeros.classList.add('visible')
 }
 
 function igualarValores(direccion) {

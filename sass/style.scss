@@ -143,9 +143,6 @@ main {
 .visible {
   display: inherit !important;
 }
-.oculto {
-  opacity: 0 !important;
-}
 
 .girar {
   animation: girar 0.15s;
@@ -159,4 +156,25 @@ main {
   to {
     transform: rotateZ(-15deg);
   }
+}
+
+/* //////////////////////// */
+// #pantalla {
+//   opacity: 0;
+// }
+.check {
+  position: absolute;
+  background-image: url(../assets/check.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(5px 5px 5px rgba(35, 35, 39, 0.5));
+  width: 150px;
+  height: 150px;
+  top: 55px;
+  left: 83px;
+}
+
+.oculto {
+  opacity: 0 !important;
 }
