@@ -23,7 +23,7 @@ In this project, we're creating a Pomodoro timer.
 
 This challenge was developed with:
 - **HTML**
-- **SASS**
+- **Sass**
 - **JavaScript**
 
 <div align="left" >
@@ -32,6 +32,6 @@ This challenge was developed with:
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="65px" height="65px" />
 </div>
 
-## 🌍 Demo
+## 🌍 Website
 You can try my final result of the challenge [here](https://jaenfigueroa.github.io/reto-temporizador/)
 
