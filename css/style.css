@@ -10,11 +10,17 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #2b2a30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
 /* ///////////////////// */
 main {
   display: flex;
-  background-color: #2b2a30;
-  height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -156,6 +162,24 @@ main {
 
 .oculto {
   opacity: 0;
+}
+
+/* FOOTER */
+footer {
+  height: 50px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */
