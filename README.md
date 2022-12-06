@@ -18,7 +18,7 @@ In this project, we're creating a Pomodoro timer.
 
 ## 📌 Users should be able to:
 
-<img src="https://octodex.github.com/images/inspectocat.jpg" style="width: 25%" align="right">
+<img src="https://octodex.github.com/images/inspectocat.jpg" style="width: 20%" align="right">
 
  - Start the timer by clicking on the start link/button.
  - Once the user clicks start, the word start will change to stop. Then, the user can click on the stop button to make the timer stop.
