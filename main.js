@@ -44,15 +44,22 @@ function controlarBarra(minutos, segundos) {
 //////////////////////////////////////////
 //////////////////////////////////////////
 function obtenerYActualizarDatos() {
-  let string = inputNumeros.value
-  let primerValor = Number(string.slice(0, 2)) || minutos
-  let segundoValor = Number(string.slice(3, 5)) || segundos
+  let texto = inputNumeros.value
+  let largo = texto.length
+  let dosPuntos = texto.slice(2, 3)
 
-  minutos = primerValor
-  segundos = segundoValor
+  if (largo === 5 && dosPuntos === ':') {
+    let primerValor = Number(texto.slice(0, 2)) || minutos
+    let segundoValor = Number(texto.slice(3, 5)) || segundos
 
-  console.log(primerValor)
-  console.log(segundoValor)
+    minutos = primerValor
+    segundos = segundoValor
+
+    return true
+  } else {
+    moverInput()
+    return false
+  }
 }
 
 function actualizarPantalla(x, y) {
@@ -73,19 +80,15 @@ let intervalo
 //////////////////////////////////////////
 //////////////////////////////////////////
 function start() {
-  console.log('se hizo click en start')
-
-  //obtener los valores del input y actualizar valores del js
-  obtenerYActualizarDatos()
-
   //ocultar el icono de check y mostrar el input desativado
   iconoCheck.style.display = 'none'
   inputNumeros.classList.remove('oculto')
 
-  //si el temporiador tiene un valor mayor de 0 segundos
-  if (minutos * 60 + segundos > 0) {
-    console.log('el valor es mayor de 0 segundos')
+  //obtener los valores del input y actualizar valores del js
+  let verificacion = obtenerYActualizarDatos()
 
+  //si el temporiador tiene un valor mayor de 0 segundos
+  if (verificacion && minutos * 60 + segundos > 0) {
     //desabilitar la edicion
     inputNumeros.disabled = 1
     //ocultar el boton de settings
@@ -106,20 +109,20 @@ function start() {
     // //disminuir los segundos y minutos, cada segundo que pase
     intervalo = setInterval(controlarPantalla, 1000)
   } else {
-    console.log('el valor es menor de 0 segundos')
-
-    inputNumeros.classList.add('girar')
-
-    setTimeout(() => {
-      inputNumeros.classList.remove('girar')
-    }, 400)
+    moverInput()
   }
 }
 
+function moverInput() {
+  inputNumeros.classList.add('girar')
+
+  setTimeout(() => {
+    inputNumeros.classList.remove('girar')
+  }, 400)
+}
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 function stop() {
-  console.log('se hizo stop')
   //mostrar el boton de configuracion
   botonSettings.disabled = 0
 
