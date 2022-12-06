@@ -16,6 +16,8 @@ In this project, we're creating a Pomodoro timer.
 
 <img src="./assets/temporizador1.gif" align="center" style="width: 70%" />
 
+<img src="https://octodex.github.com/images/inspectocat.jpg" style="width: 25%" align="rigth">
+
 ## 📌 Users should be able to:
  - Start the timer by clicking on the start link/button.
  - Once the user clicks start, the word start will change to stop. Then, the user can click on the stop button to make the timer stop.
@@ -37,5 +39,4 @@ This challenge was developed with the following languages:
 ## 🌍 Website
 You can try my final result of the challenge [here](https://jaenfigueroa.github.io/Pomodoro-timer).
 
-<img src="https://octodex.github.com/images/inspectocat.jpg" style="width: 25%" >
 
