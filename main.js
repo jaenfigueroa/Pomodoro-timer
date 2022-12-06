@@ -32,24 +32,22 @@ function controlarBarra(minutos, segundos) {
   porcentajeFaltante = (totalActual / totalInicial) * 100
 
   if (minutos <= 0 && segundos <= 0) {
-    /* parar el audio */
-    audio.pause()
-
     stop()
     actualizarBarra(100)
     iconoCheck.style.display = 'inherit'
     inputNumeros.classList.add('oculto')
+
+    /* quitar audio */
+    audio.stop()
   } else {
+    /* empezar audio */
     actualizarBarra(porcentajeFaltante)
+    audio.play()
   }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 function obtenerYActualizarDatos() {
-  // -si el largo es 5
-  // - si tiene dos puntos
-  // - si no incluye letras
-
   let texto = inputNumeros.value
 
   let largo = texto.length
@@ -76,10 +74,6 @@ function obtenerYActualizarDatos() {
 }
 
 function actualizarPantalla(x, y) {
-  /* empezar audio */
-  audio.pause()
-  audio.play()
-
   inputNumeros.value = `${('0' + x).slice(-2)}:${('0' + y).slice(-2)}`
 }
 
