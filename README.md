@@ -15,9 +15,9 @@ In this project, we're creating a Pomodoro timer.
 ## 🚀 challenge finished
 
 This challenge was developed with:
-- HTML
-- SASS
-- JavaScript
+- ***HTML*
+- **SASS**
+- **JavaScript**
 
 You can try my final result of the challenge [here](https://jaenfigueroa.github.io/reto-temporizador/)
 
