@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   font-size: 1.6rem;
-  font-family: "Barlow", sans-serif;
+  font-family: sans-serif;
 }
 
 html {
@@ -80,6 +80,7 @@ main {
   position: relative;
 }
 .contenedor-temporizador .temporizador .input-numeros {
+  font-family: "Barlow", sans-serif;
   background-color: transparent;
   color: white;
   width: 240px;
@@ -113,6 +114,7 @@ main {
   font-weight: 500;
   padding: 0.5rem 2rem;
   border-radius: 2rem;
+  font-family: "Barlow", sans-serif;
 }
 .contenedor-temporizador .temporizador #boton-start {
   display: none;
@@ -184,12 +186,10 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  font-family: sans-serif;
 }
 footer a {
   color: white;
   text-decoration: none;
-  font-family: sans-serif;
   font-weight: bold;
 }
 footer a:hover {
