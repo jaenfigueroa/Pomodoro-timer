@@ -1,10 +1,7 @@
-<div align="center" >
-
 # Challenge #1 - Pomodoro timer ⏱️
 
-</div>
 
-<div align="center" >
+<div align="left" >
 <img src="https://img.shields.io/github/stars/jaenfigueroa/Pomodoro-timer">
 <img src="https://img.shields.io/github/forks/jaenfigueroa/Pomodoro-timer">
 <img src="https://img.shields.io/github/issues-pr/jaenfigueroa/Pomodoro-timer">
