@@ -40,7 +40,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  padding-top: 4rem;
+  padding-top: 5rem;
   position: relative;
 }
 .contenedor-temporizador .temporizador .input-numeros {
@@ -149,8 +149,8 @@ main {
   filter: drop-shadow(5px 5px 5px rgba(35, 35, 39, 0.5));
   width: 150px;
   height: 150px;
-  top: 40px;
-  left: 83px;
+  top: 45px;
+  left: 86px;
   display: none;
 }
 
