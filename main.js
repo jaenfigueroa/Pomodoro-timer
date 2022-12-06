@@ -1,3 +1,4 @@
+const aviso = document.getElementById('aviso')
 const contenedorTemporizador = document.getElementById('contenedor-temporizador')
 
 const iconoCheck = document.getElementById('icono-check')
@@ -58,6 +59,7 @@ function obtenerYActualizarDatos() {
     return true
   } else {
     moverInput()
+    aviso.style.display = 'flex'
     return false
   }
 }
@@ -80,9 +82,10 @@ let intervalo
 //////////////////////////////////////////
 //////////////////////////////////////////
 function start() {
-  //ocultar el icono de check y mostrar el input desativado
+  //ocultar el icono de check, mostrar el input desativado, ocultar el aviso
   iconoCheck.style.display = 'none'
   inputNumeros.classList.remove('oculto')
+  aviso.style.display = 'none'
 
   //obtener los valores del input y actualizar valores del js
   let verificacion = obtenerYActualizarDatos()
