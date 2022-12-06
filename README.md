@@ -1,8 +1,4 @@
-<div align="center">
-
 # Pomodoro timer ⏱️
-
-</div>
 
 <div align="center" >
 <img src="https://img.shields.io/github/stars/jaenfigueroa/Pomodoro-timer">
