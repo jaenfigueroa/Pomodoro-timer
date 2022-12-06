@@ -45,20 +45,39 @@ function controlarBarra(minutos, segundos) {
 //////////////////////////////////////////
 //////////////////////////////////////////
 function obtenerYActualizarDatos() {
+  // -si el largo es 5
+  // - si tiene dos puntos
+  // - si no incluye letras
+
   let texto = inputNumeros.value
+
   let largo = texto.length
   let dosPuntos = texto.slice(2, 3)
+  let primerValor = +texto.slice(0, 2)
+  let segundoValor = +texto.slice(3, 5)
 
-  if (largo === 5 && dosPuntos === ':') {
-    let primerValor = Number(texto.slice(0, 2)) || minutos
-    let segundoValor = Number(texto.slice(3, 5)) || segundos
-
+  if (
+    largo === 5 &&
+    dosPuntos === ':' &&
+    typeof primerValor === 'number' &&
+    typeof segundoValor === 'number'
+  ) {
     minutos = primerValor
     segundos = segundoValor
 
     return true
   } else {
+    console.log('no pasa test')
+
     moverInput()
+
+    console.log(primerValor)
+    console.log(segundoValor)
+
+    if (primerValor === 0 && segundoValor === 0) {
+      return false
+    }
+
     aviso.style.display = 'flex'
     return false
   }
@@ -87,8 +106,10 @@ function start() {
   inputNumeros.classList.remove('oculto')
   aviso.style.display = 'none'
 
-  //obtener los valores del input y actualizar valores del js
+  //obtener los valores del input, actualizar y verificar los valores del js
   let verificacion = obtenerYActualizarDatos()
+
+  console.log('respuesta:', verificacion)
 
   //si el temporiador tiene un valor mayor de 0 segundos
   if (verificacion && minutos * 60 + segundos > 0) {
