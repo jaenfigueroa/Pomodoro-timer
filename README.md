@@ -26,9 +26,12 @@ This challenge was developed with:
 - **SASS**
 - **JavaScript**
 
+<div align="left" >
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" width="70px" height="70px" /> 
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg" width="75px" height="75px" /> 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="65px" height="65px" />  &nbsp; &nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="65px" height="65px" />
+</div>
+
 
 You can try my final result of the challenge [here](https://jaenfigueroa.github.io/reto-temporizador/)
 
