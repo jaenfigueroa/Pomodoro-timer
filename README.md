@@ -27,5 +27,5 @@ This challenge was developed with the following languages:
 - **JavaScript**
 
 ## 🌍 Website
-You can try my final result of the challenge [here](https://jaenfigueroa.github.io/reto-temporizador/)
+You can try my final result of the challenge [here](https://jaenfigueroa.github.io/Pomodoro-timer)
 
