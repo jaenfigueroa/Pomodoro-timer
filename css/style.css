@@ -18,6 +18,17 @@ body {
   height: 100vh;
 }
 
+/*TEMAS ///////////////// */
+.tema-verde {
+  --color-1: #00aa51;
+  --color-2: #058141;
+}
+
+.tema-rojo {
+  --color-1: crimson;
+  --color-2: rgb(185, 18, 51);
+}
+
 /* ///////////////////// */
 main {
   display: flex;
@@ -25,6 +36,23 @@ main {
   justify-content: center;
   align-items: center;
   user-select: none;
+}
+
+.aviso {
+  background-color: rgb(255, 225, 247);
+  padding: 1rem;
+  font-size: 2rem;
+  position: absolute;
+  top: 40px;
+  width: 290px;
+  border-radius: 1rem;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  z-index: 1;
+}
+.aviso b {
+  font-size: 4rem;
 }
 
 .contenedor-temporizador {
@@ -100,7 +128,7 @@ main {
 .contenedor-temporizador .temporizador #boton-stop:hover {
   background-color: var(--color-2);
 }
-.contenedor-temporizador .temporizador__settings {
+.contenedor-temporizador .temporizador__boton-settings {
   width: 25px;
   height: 25px;
   background-image: url(../assets/gear.svg);
@@ -111,29 +139,14 @@ main {
   border: none;
   opacity: 0.4;
 }
-.contenedor-temporizador .temporizador__settings:hover {
+.contenedor-temporizador .temporizador__boton-settings:hover {
   opacity: 0.6;
 }
-.contenedor-temporizador .temporizador__settings:disabled {
+.contenedor-temporizador .temporizador__boton-settings:disabled {
   opacity: 0;
 }
 
-/*TEMAS ///////////////// */
-.tema-verde {
-  --color-1: #00aa51;
-  --color-2: #058141;
-}
-
-.tema-rojo {
-  --color-1: crimson;
-  --color-2: rgb(185, 18, 51);
-}
-
 /* ///////////////// */
-.visible {
-  display: inherit !important;
-}
-
 .girar {
   animation: girar 0.15s;
   animation-iteration-count: 3;
@@ -162,10 +175,6 @@ main {
   display: none;
 }
 
-.oculto {
-  opacity: 0;
-}
-
 /* FOOTER */
 footer {
   height: 50px;
@@ -184,21 +193,13 @@ footer a:hover {
   text-decoration: underline;
 }
 
-.aviso {
-  background-color: rgb(255, 225, 247);
-  padding: 1rem;
-  font-size: 2rem;
-  position: absolute;
-  top: 40px;
-  width: 290px;
-  border-radius: 1rem;
-  text-align: center;
-  display: none;
-  flex-direction: column;
-  z-index: 1;
+/* ///////////////////////// */
+.visible {
+  display: inherit !important;
 }
-.aviso b {
-  font-size: 4rem;
+
+.oculto {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
