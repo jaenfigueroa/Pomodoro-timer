@@ -16,7 +16,7 @@ In this project, we're creating a Pomodoro timer.
 
 <img src="./assets/temporizador1.gif" align="center" style="width: 70%" />
 
-<img src="https://octodex.github.com/images/inspectocat.jpg" style="width: 25%" align="rigth">
+<img src="https://octodex.github.com/images/inspectocat.jpg" style="width: 25%" align="right">
 
 ## 📌 Users should be able to:
  - Start the timer by clicking on the start link/button.
