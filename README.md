@@ -1,6 +1,6 @@
 <div align="center" >
 
-#Pomodoro timer ⏱️
+# Pomodoro timer ⏱️
 
 </div>
 
