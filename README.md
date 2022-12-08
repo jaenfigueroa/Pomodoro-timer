@@ -13,7 +13,7 @@
 
 ## 💡 Brief
 
-In this project, we're creating a Pomodoro timer.
+In this project, I created a Pomodoro timer.
 
 <img src="./assets/temporizador2.gif" align="center" style="width: 100%"  />
 
