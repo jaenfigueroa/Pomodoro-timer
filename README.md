@@ -1,6 +1,6 @@
 <div align="center" >
 
-# Challenge #1 - Pomodoro timer ⏱️
+#Pomodoro timer ⏱️
 
 </div>
 
