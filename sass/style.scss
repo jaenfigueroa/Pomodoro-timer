@@ -40,8 +40,8 @@ main {
   padding: 1rem;
   font-size: 2.2rem;
   position: absolute;
-  top: 40px;
-  width: 200px;
+  top: 4rem;
+  width: 20rem;
   border-radius: 1rem;
   text-align: center;
   display: none;
@@ -54,20 +54,19 @@ main {
 }
 
 .contenedor-temporizador {
-  width: 310px;
-  height: 310px;
+  width: 31rem;
+  height: 31rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   background-color: gray;
   background: conic-gradient(from 180deg, var(--color-1) 100%, black 100%);
-  box-shadow: -10px 10px 20px 10px rgba(22, 22, 25, 0.9),
-    0 0 20px 20px rgba(72, 70, 76, 0.7);
+  box-shadow: -1rem 1rem 2rem 1rem rgba(22, 22, 25, 0.9), 0 0 2rem 2rem rgba(72, 70, 76, 0.7);
 
   .temporizador {
-    width: 300px;
-    height: 300px;
+    width: 30rem;
+    height: 30rem;
     background: radial-gradient(#3e3e46, #141416);
     border-radius: 50%;
 
@@ -83,8 +82,8 @@ main {
       font-family: 'Barlow', sans-serif;
       background-color: transparent;
       color: white;
-      width: 240px;
-      height: 90px;
+      width: 24rem;
+      height: 9rem;
 
       font-size: 10rem;
       font-size: 9rem;
@@ -93,11 +92,11 @@ main {
       border: none;
       outline: none;
       text-align: center;
-      top: 83px;
-      border-bottom: 6px solid var(--color-2);
+      top: 8.3rem;
+      border-bottom: 0.6rem solid var(--color-2);
 
       &:disabled {
-        border-bottom: 6px solid transparent;
+        border-bottom: 0.6rem solid transparent;
       }
     }
 
@@ -115,7 +114,7 @@ main {
       color: white;
       font-size: 1.8rem;
       text-transform: uppercase;
-      letter-spacing: 5px;
+      letter-spacing: 0.5rem;
       font-weight: 500;
       padding: 0.5rem 2rem;
       border-radius: 2rem;
@@ -125,7 +124,7 @@ main {
     #boton-start {
       display: none;
       background-color: var(--color-1);
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 
       &:hover {
         background-color: var(--color-2);
@@ -141,8 +140,8 @@ main {
     }
 
     &__boton-settings {
-      width: 25px;
-      height: 25px;
+      width: 2.5rem;
+      height: 2.5rem;
       background-image: url(../assets/gear.svg);
       background-color: transparent;
       background-position: center;
@@ -184,17 +183,17 @@ main {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  filter: drop-shadow(5px 5px 5px rgba(35, 35, 39, 0.5));
-  width: 150px;
-  height: 150px;
-  top: 45px;
-  left: 86px;
+  filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(35, 35, 39, 0.5));
+  width: 15rem;
+  height: 15rem;
+  top: 4.5rem;
+  left: 8.6rem;
   display: none;
 }
 
 /* FOOTER */
 footer {
-  height: 50px;
+  height: 5rem;
   text-align: center;
   color: white;
   position: absolute;
