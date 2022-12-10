@@ -22,8 +22,8 @@ body {
   --color-2: #058141;
 }
 .tema-rojo {
-  --color-1: crimson;
-  --color-2: rgb(185, 18, 51);
+  --color-1: #dc143c;
+  --color-2: #b91233;
 }
 
 /* ///////////////////// */
@@ -36,7 +36,7 @@ main {
 }
 
 .aviso {
-  background-color: rgb(255, 225, 247);
+  background-color: #ffe1f7;
   padding: 1rem;
   font-size: 2.2rem;
   position: absolute;
@@ -60,7 +60,7 @@ main {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: gray;
+  background-color: #808080;
   background: conic-gradient(from 180deg, var(--color-1) 100%, black 100%);
   box-shadow: -1rem 1rem 2rem 1rem rgba(22, 22, 25, 0.9), 0 0 2rem 2rem rgba(72, 70, 76, 0.7);
 
